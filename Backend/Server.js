@@ -32,10 +32,10 @@ app.get("/test-error",(req,res,next)=>{
 app.use(errorMiddleware)
 
 
-app.listen(process.env.port,()=>{
-    console.log(`Server Running for port no. ${process.env.port}`)
-}) 
+const PORT = process.env.PORT || 5000
+
+app.listen(PORT, () => {
+  console.log(`Server Running for port no. ${PORT}`)
+})
 
 
-
-// "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWI0YjU2Njc0YjhiM2UxNjljMDM5MmIiLCJpYXQiOjE3OTAyMjc4NDcsImV4cCI6MTc5MDMxNDI0N30.GV_oeg3Dv3NQRmzEgHlv57H8FROL3BC1KROztkVG3IA"
