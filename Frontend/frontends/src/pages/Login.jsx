@@ -22,7 +22,7 @@ const Login = () => {
              
         try {
             const response = await axios.post(
-                "http://localhost:5000/api/login",
+                "https://my-tasks-backend.onrender.com/api/login",
                 loginData
             )
 
@@ -32,7 +32,7 @@ const Login = () => {
                         navigate("/tasks")
 
         } catch (error) {
-            setMessage(error.response.data.message)
+            setMessage(error.response.data.message || "Login failed")
             navigate('/register')
             console.log(error.response?.data || error.message)
         }

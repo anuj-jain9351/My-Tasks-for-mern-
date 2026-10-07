@@ -27,7 +27,7 @@ const Tasks = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token')
-      const response = await axios.post("http://localhost:5000/api/tasks", createTask, {
+      const response = await axios.post("https://my-tasks-backend.onrender.com/api/tasks", createTask, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
@@ -56,7 +56,7 @@ const Tasks = () => {
 
   const api = async () => {
     const token = localStorage.getItem('token')
-    const response = await axios.get(`http://localhost:5000/api/tasks?search=${search}&status=${status} `, {
+    const response = await axios.get(`https://my-tasks-backend.onrender.com/api/tasks?search=${search}&status=${status} `, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
@@ -88,7 +88,7 @@ const Tasks = () => {
     e.preventDefault()
     try {
       const token = localStorage.getItem("token")
-      const response = await axios.patch(`http://localhost:5000/api/tasks/${editTask._id}`, editTask, {
+      const response = await axios.patch(`https://my-tasks-backend.onrender.com/api/tasks/${editTask._id}`, editTask, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
@@ -112,7 +112,7 @@ const Tasks = () => {
   const DeleteTask = async(e)=>{
     try{
       const token = localStorage.getItem("token")
-      const response = await axios.delete(`http://localhost:5000/api/tasks/${e._id}`, {
+      const response = await axios.delete(`https://my-tasks-backend.onrender.com/api/tasks/${e._id}`, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`

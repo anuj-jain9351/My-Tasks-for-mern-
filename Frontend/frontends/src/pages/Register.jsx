@@ -22,7 +22,7 @@ const Register = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                "http://localhost:5000/api/register",
+                "https://my-tasks-backend.onrender.com/api/register",
                 formData
                 
             )
